@@ -1,80 +1,115 @@
-# AI Network Threat Detector
+# Encrypted Traffic Analyzer
 
-This project is an AI-based system for detecting threats and anomalies in network traffic. It combines machine learning models with a Streamlit dashboard to provide real-time, behavior-based traffic analysis — even in encrypted environments.
-
----
-
-## 🔍 Features
-
-- Supervised traffic classification using Random Forest
-- Unsupervised anomaly detection using Isolation Forest
-- Hybrid false positive analysis
-- Scalable and real-time performance testing
-- Privacy-preserving behavior-only detection
-- Interactive dashboard for data upload, processing, and visualization
+**Encrypted Traffic Analyzer** is an AI-powered network monitoring tool designed to detect anomalies and classify threats in real-time — without inspecting or decrypting encrypted payloads. It leverages machine learning models to ensure privacy-preserving traffic analysis and provides insights through a clean, interactive dashboard built with Streamlit.
 
 ---
 
-## 🧪 Environment & Dependencies
+## Key Features
 
-- **Python**: 3.8 or above
-- **Recommended**: Use a virtual environment
-python -m venv venv
-source venv/bin/activate    # On Windows: venv\\Scripts\\activate
+- **Automated Traffic Classification** using a Random Forest model  
+- **Anomaly and Threat Detection** powered by Isolation Forest  
+- **False Positive Reduction** through hybrid logic mechanisms  
+- **Real-Time Performance Metrics** with visualizations  
+- **Privacy-Preserving Analysis** — no decryption required  
+- **User-Friendly Web Interface** developed using Streamlit  
+
+---
+
+## Getting Started
+
+Follow these steps to set up and run the project locally.
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/ai-network-threat-detector.git
+cd ai-network-threat-detector
+```
+
+
+### (Optional) Create a Virtual Environment
+
+It's recommended to use a virtual environment to manage dependencies.
+
+On Windows:
+
+```bash
+py -3 -m venv venv
+./venv/Scripts/Activate.ps1
+```
+
+On macOS/Linux:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+
+### 2. Install Dependencies
+
+Install the required Python packages using pip:
+
+```bash
 pip install -r requirements.txt
+```
 
-📁 Project Structure
-app/
+Alternatively, install them manually:
 
-dashboard.py – Main Streamlit dashboard interface
+```bash
+pip install streamlit pandas numpy scikit-learn matplotlib
+```
 
-src/
+### 3. Train the Model
 
-train_model.py – Trains Random Forest classifier
+Navigate to the `source` directory and run the training script:
 
-preprocess.py – Data preprocessing script
-
-anomaly_detector.py – Detects anomalies
-
-predict.py – Predicts using trained classifier
-
-data/
-
-KDDTrain_sample.csv – Training dataset
-
-KDDTest_sample.csv – Testing dataset
-
-models/
-
-traffic_classifier.pkl – Trained ML model
-
-README.md – This file
-
-requirements.txt – List of required packages
-
-🚀 How to Run
-1. Train the Classifier
-
-cd src
+```bash
+cd source
 python train_model.py
+```
 
-2. Launch the Streamlit Dashboard
+This will train the traffic classifier and save the model.
 
+### 4. Launch the Dashboard
+
+Navigate to the `app` directory and start the Streamlit dashboard:
+
+```bash
 cd ../app
 streamlit run dashboard.py
+```
 
-You’ll see your AI-powered network security dashboard UI.
-From there, you can:
-Upload CSV files (like KDDTest_sample.csv)
-View traffic classification results
-Analyze detected anomalies
-See performance metrics
+---
 
+## Project Structure
 
-📁 models/ Folder
-Will contain trained model files:
+```
+AI_Network_Security_Project/
+│
+├── app/                      # Streamlit web interface
+│   └── dashboard.py          # Main dashboard script
+│
+├── source/                   # Model training and logic
+│   ├── train_model.py        # Random Forest model training
+│   ├── preprocess.py         # Data preprocessing utilities
+│   ├── anomaly_detector.py   # Isolation Forest for anomaly detection
+│   └── predict.py            # Prediction and classification logic
+│
+├── data/                     # Sample datasets
+│   ├── KDDTrain_sample.csv
+│   └── KDDTest_sample.csv
+│
+├── models/                   # Trained ML models
+│   └── traffic_classifier.pkl
+│
+├── requirements.txt          # Python dependencies
+├── .gitignore                # Git ignore configuration
+└── README.md                 # Project documentation
+```
 
-classifier.pkl (supervised model)
-anomaly_model.pkl (unsupervised anomaly detector)
+---
 
+## About the Project
 
+This tool is intended for researchers, security analysts, and network engineers who are exploring ways to analyze encrypted traffic without compromising user privacy. By leveraging ML-based pattern recognition, the system helps in identifying suspicious behaviors while maintaining scalability and performance.
