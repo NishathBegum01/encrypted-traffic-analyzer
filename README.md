@@ -1,74 +1,73 @@
-# encrypted-traffic-analyzer
-A smart AI-based tool that analyzes network traffic, detects anomalies, and classifies threats in real-time — all through a clean, interactive dashboard.
-
 # AI Network Threat Detector
 
-This project is an AI-based network traffic analysis system that performs real-time anomaly detection and behavior-based classification. It uses machine learning models to identify suspicious activity without inspecting encrypted payloads.
+This project is an AI-based system for detecting threats and anomalies in network traffic. It combines machine learning models with a Streamlit dashboard to provide real-time, behavior-based traffic analysis — even in encrypted environments.
 
----Features
-- Automated Traffic Classification using Random Forest
-- Anomaly / Threat Detection using Isolation Forest
-- False Positive Analysis via hybrid logic
-- Scalability Metrics with real-time performance graphs
-- Privacy-Preserving: works without decrypting traffic
-- Interactive Dashboard built with Streamlit
-
-- 
 ---
 
-## How to Run
+## 🔍 Features
 
-### 1. Clone the Repository
+- Supervised traffic classification using Random Forest
+- Unsupervised anomaly detection using Isolation Forest
+- Hybrid false positive analysis
+- Scalable and real-time performance testing
+- Privacy-preserving behavior-only detection
+- Interactive dashboard for data upload, processing, and visualization
 
-git clone https://github.com/your-username/ai-network-threat-detector.git
-cd ai-network-threat-detector
+---
 
-**2. Install Required Packages**
+## 🧪 Environment & Dependencies
+
+- **Python**: 3.8 or above
+- **Recommended**: Use a virtual environment
+python -m venv venv
+source venv/bin/activate    # On Windows: venv\\Scripts\\activate
 pip install -r requirements.txt
-Or install manually:
-pip install streamlit pandas numpy scikit-learn matplotlib
 
-**3. Train the Model**
+📁 Project Structure
+app/
+
+dashboard.py – Main Streamlit dashboard interface
+
+src/
+
+train_model.py – Trains Random Forest classifier
+
+preprocess.py – Data preprocessing script
+
+anomaly_detector.py – Detects anomalies
+
+predict.py – Predicts using trained classifier
+
+data/
+
+KDDTrain_sample.csv – Training dataset
+
+KDDTest_sample.csv – Testing dataset
+
+models/
+
+traffic_classifier.pkl – Trained ML model
+
+README.md – This file
+
+requirements.txt – List of required packages
+
+🚀 How to Run
+1. Train the Classifier
+
 cd src
 python train_model.py
 
-**4. Launch the Dashboard**
+2. Launch the Streamlit Dashboard
+
 cd ../app
 streamlit run dashboard.py
 
 
-Project Structure 
-AI_Network_Security_Project/
+📁 models/ Folder
+Will contain trained model files:
 
-**app/** – Streamlit dashboard
-
-dashboard.py – Main web UI script
-
-**src **– Model training and prediction logic
-
-train_model.py – Trains the Random Forest model
-
-preprocess.py – Preprocesses the dataset
-
-anomaly_detector.py – Detects anomalies using Isolation Forest
-
-predict.py – Runs predictions using the trained model
-
-data/ – Network traffic datasets
-
-KDDTrain_sample.csv – Training dataset
-
-KDDTest_sample.csv – Test dataset
-
-models/ – Saved machine learning models
-
-traffic_classifier.pkl – Trained Random Forest classifier
-
-README.md – Project description and instructions
-
-requirements.txt – List of Python packages
-
-(Optional) .gitignore – Git config to ignore unnecessary files
-
+classifier.pkl (supervised model)
+anomaly_model.pkl (unsupervised anomaly detector)
 
 
