@@ -26,6 +26,26 @@ git clone https://github.com/your-username/ai-network-threat-detector.git
 cd ai-network-threat-detector
 ```
 
+
+### (Optional) Create a Virtual Environment
+
+It's recommended to use a virtual environment to manage dependencies.
+
+On Windows:
+
+```bash
+py -3 -m venv venv
+./venv/Scripts/Activate.ps1
+```
+
+On macOS/Linux:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+
 ### 2. Install Dependencies
 
 Install the required Python packages using pip:
