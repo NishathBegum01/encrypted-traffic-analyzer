@@ -63,6 +63,8 @@ python train_model.py
 cd ../app
 streamlit run dashboard.py
 
+on the dashboard add the dataset file and click on the browse option and select the dataset file (e.g: .csv file )
+
 
 📁 models/ Folder
 Will contain trained model files:
