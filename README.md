@@ -63,7 +63,12 @@ python train_model.py
 cd ../app
 streamlit run dashboard.py
 
-on the dashboard add the dataset file and click on the browse option and select the dataset file (e.g: .csv file )
+You’ll see your AI-powered network security dashboard UI.
+From there, you can:
+Upload CSV files (like KDDTest_sample.csv)
+View traffic classification results
+Analyze detected anomalies
+See performance metrics
 
 
 📁 models/ Folder
